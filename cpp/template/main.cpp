@@ -1,21 +1,36 @@
 #include <iostream>
 
 using namespace std;
-template <class x, class y>
-x big(x a , y b)
-{
-    if(a>b)
-        return(a);
-    else
-        return(b);
+template<typename T>
+class maths{
 
+T second, first;
+public:
+maths(){}
+
+maths(T a,T b){
+ second = a;
+ first = b;
+}
+void add();
+void multiply();
+
+};
+template <typename T>
+void maths<T>::add()
+{
+    cout<<"adding the result = "<<second + first<<endl;
+}
+template <typename T>
+void maths<T>::multiply()
+{
+      cout<<"multiply  the result = "<<second*first<<endl;
 }
 
 int main()
-{   cout<<"biger is "<<big(5.6,8.9)<<endl;
-    cout<<"biger is "<<big(6,9)<<endl;
-    cout<<"adding another placeholder"<<endl;
-    cout<<"biger is "<<big(5,8.9)<<endl;
+{   maths<int> obj(10,20);
+    obj.add();
+    obj.multiply();
 
     return 0;
 }
