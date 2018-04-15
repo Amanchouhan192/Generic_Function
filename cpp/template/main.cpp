@@ -1,36 +1,41 @@
 #include <iostream>
+#include<conio.h>
 
 using namespace std;
-template<typename T>
-class maths{
-
-T second, first;
+class complex{
+private:
+    int a , b;
 public:
-maths(){}
+    void setData(int x, int y)
+    {
+        a  = x;
+        b  = y;
+    }
+void showData(){
 
-maths(T a,T b){
- second = a;
- first = b;
-}
-void add();
-void multiply();
+     cout<<"addition of complex no is = "<<a<<"+"<<b<<"i"<<endl;
+
+    }
+complex add(complex c)
+{
+  complex temp;
+  temp.a = a + c.a;
+  temp.b = b + c.b;
+  return(temp);
+
+
+    }
 
 };
-template <typename T>
-void maths<T>::add()
-{
-    cout<<"adding the result = "<<second + first<<endl;
-}
-template <typename T>
-void maths<T>::multiply()
-{
-      cout<<"multiply  the result = "<<second*first<<endl;
-}
+
 
 int main()
-{   maths<int> obj(10,20);
-    obj.add();
-    obj.multiply();
-
+{
+    complex c1,c2,c3;
+    c1.setData(3,4);
+    c2.setData(5,6);
+    c3 = c1.add(c2);
+    c3.showData();
+    getch();
     return 0;
 }
