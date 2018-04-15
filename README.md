@@ -1,2 +1,2 @@
 # Generic_Function
-its a template function practice repo :smile:
+its a template function practice repo :smile::wink:
